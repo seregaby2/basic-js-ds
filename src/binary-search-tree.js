@@ -25,7 +25,7 @@ constructor() {
     if(node.data === data) {
       return node;
     }
-    if(data < node.value) {
+    if(data < node.data) {
       node.left = addNewElement(node.left, data)
     }
     else {
@@ -33,7 +33,7 @@ constructor() {
     }
     return node;
   }
-  }
+}
 
   has(data) {
     return searchElement(this.Root, data);
@@ -46,7 +46,7 @@ constructor() {
       return true;
     }
     // return data < node.left?searchElement(node.left, data):searchElement(node.right, data);
-  if(data < node.left) {
+  if(data < node.data) {
       return searchElement(node.left, data)
     }
     else {
@@ -65,7 +65,7 @@ constructor() {
     if(node.data === data) {
       return node;
     }
-    if(data < node.left) {
+    if(data < node.data) {
       return searchElementValue(node.left, data)
       }
     else {
@@ -87,7 +87,7 @@ constructor() {
       }
       else if(data > node.data) {
         node.right = RemoveElement(node.right, data)
-        return node
+        return node;
       }
       else {
         if(!node.left && !node.right) {
@@ -114,13 +114,13 @@ constructor() {
 
   min() {
     if (!this.Root) {
-      return
+      return;
     }
-    let node = this.Root
+    let node = this.Root;
     while (node.left) {
-      node = node.left
+      node = node.left;
     }
-    return node.data
+    return node.data;
   }
 
   max() {
